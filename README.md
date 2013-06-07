@@ -84,7 +84,9 @@ This will return the result the closure (used in the previous example) as long a
 FORGET
 ------
 
-This will remove the cache item for the given key.   
+This will remove the cache item for the given key.
+
+
 ```Cache::forget('get_google');```
 
 
@@ -94,7 +96,7 @@ This will remove the file from the disk, forever (a very long time).
 REMEMBER
 --------
 
-This is the most used method from this class and combines ```put()``` and ```get()```.   
+This is the most used method from this class and combines ```put()``` and ```get()```.  
 The syntax looks like that:
 
 ```Cache::remember($key, $value, $expire, $serialize = true, $override = true);```
@@ -114,7 +116,7 @@ This is in most cases the most useful method, because you do not have two write 
 CLEAR
 -----
 
-This function will clear all cached items older than ```$expire``` seconds.   
+This function will clear all cached items older than ```$expire``` seconds.  
 ```Cache::clear($expire);```
 
 Thats it! Simple and straight forward.
