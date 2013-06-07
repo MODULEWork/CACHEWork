@@ -86,7 +86,7 @@ FORGET
 
 This will remove the cache item for the given key.
 
-Cache::forget('get_google');
+    Cache::forget('get_google');
 
 This will remove the file from the disk, forever (a very long time).
 
@@ -115,7 +115,7 @@ CLEAR
 -----
 
 This function will clear all cached items older than ```$expire``` seconds.  
-```Cache::clear($expire);```
+    Cache::clear($expire);
 
 Thats it! Simple and straight forward.
 
