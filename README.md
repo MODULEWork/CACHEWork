@@ -85,7 +85,9 @@ FORGET
 ------
 
 This will remove the cache item for the given key.
-```Cache::forget('get_google');```
+
+Cache::forget('get_google');
+
 This will remove the file from the disk, forever (a very long time).
 
 
