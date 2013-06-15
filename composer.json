@@ -1,7 +1,7 @@
 {
     "name": "modulework/cachework",
     "description": "A simple way of caching information to disk",
-    "type": "module",
+    "type": "modulework-module",
     "license": "Apache 2.0",
     "authors": [
         {
