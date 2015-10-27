@@ -45,7 +45,7 @@ class Cache
 	* @param boolean default:true; This will tell whether we should override existing files
 	* @return void
 	*/
-	public function put($key, $value, $serialize = true, $override = true)
+	public static function put($key, $value, $serialize = true, $override = true)
 	{
 		$key = md5($key);
 
@@ -79,7 +79,7 @@ class Cache
 	* @param mixed default:NULL; the return value, if the key doesn' t exists or is outdated
 	* @return mixed; content of the cache OR if no cache exists or outdated: NULL
 	*/
-	public function get($key, $expire, $default = null)
+	public static function get($key, $expire, $default = null)
 	{
 		$key = md5($key);
 		if (static::validateItem($key, $expire)) {
@@ -95,7 +95,7 @@ class Cache
 	* @param string; the unique key used in the put() or get() method
 	* @return void
 	*/
-	public function forget($key, $pre_hash=false)
+	public static function forget($key, $pre_hash=false)
 	{
 		if (!$pre_hash) {
 			$key = md5($key);
@@ -113,7 +113,7 @@ class Cache
 	* @param boolean default:true; This will tell whether we should override existing files
 	* @return mixed; content of the cache OR if no cache exists or outdated: NULL
 	*/
-	public function remember($key, $value, $expire, $serialize = true, $override = true)
+	public static function remember($key, $value, $expire, $serialize = true, $override = true)
 	{
 		if (self::get($key, $expire) == null) {
 			self::put($key, $value, $serialize, $override);
@@ -126,7 +126,7 @@ class Cache
 	* Cleares all cached item older then $expire seconds
 	* @param int $expire in seconds
 	*/
-	public function clear($expire)
+	public static function clear($expire)
 	{
 		foreach (glob(static::$path) as $item) {
 			if (static::validateItem($item, $expire)) {
